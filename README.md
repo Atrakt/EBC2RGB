@@ -10,5 +10,5 @@ Atraktiv Brewery - Yann Simard - 03/07/2014
 What is EBC ?
 http://en.wikipedia.org/wiki/Standard_Reference_Method#EBC
 
-atrakt.servebeer.com
+http://atrakt.servebeer.com
 
