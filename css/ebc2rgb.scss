@@ -1,0 +1,77 @@
+$version: "0.11";
+/*!
+ *	EBC to RGB CSS Stylesheet
+ *	The 7th Floor Brewing Co. - 2014
+ *	CSS Version #{$version}
+ *	CSS Compiled: #{timestamp()}
+ */
+
+//COLORS LIST
+$ebc-color-list: (
+	1 unquote("rgb(250, 250, 188)"),
+	2 unquote("rgb(250, 250, 160)"),
+	3 unquote("rgb(250, 250, 133)"),
+	4 unquote("rgb(250, 250, 105)"),
+	5 unquote("rgb(250, 250, 78)"),
+	6 unquote("rgb(245, 246, 50)"),
+	7 unquote("rgb(240, 238, 46)"),
+	8 unquote("rgb(235, 228, 47)"),
+	9 unquote("rgb(230, 218, 48)"),
+	10 unquote("rgb(224, 206, 50)"),
+	11 unquote("rgb(219, 196, 51)"),
+	12 unquote("rgb(214, 186, 52)"),
+	13 unquote("rgb(209, 176, 54)"),
+	14 unquote("rgb(204, 166, 55)"),
+	15 unquote("rgb(200, 156, 56)"),
+	16 unquote("rgb(197, 146, 56)"),
+	17 unquote("rgb(195, 139, 56)"),
+	18 unquote("rgb(192, 136, 56)"),
+	19 unquote("rgb(192, 132, 56)"),
+	20 unquote("rgb(192, 128, 56)"),
+	21 unquote("rgb(192, 124, 56)"),
+	22 unquote("rgb(192, 120, 56)"),
+	23 unquote("rgb(192, 116, 56)"),
+	24 unquote("rgb(192, 112, 56)"),
+	25 unquote("rgb(192, 109, 56)"),
+	26 unquote("rgb(188, 105, 56)"),
+	27 unquote("rgb(183, 101, 56)"),
+	28 unquote("rgb(178, 97, 56)"),
+	29 unquote("rgb(171, 94, 55)"),
+	30 unquote("rgb(164, 90, 53)"),
+	31 unquote("rgb(157, 86, 52)"),
+	32 unquote("rgb(149, 82, 51)"),
+	33 unquote("rgb(141, 77, 49)"),
+	34 unquote("rgb(134, 73, 46)"),
+	35 unquote("rgb(127, 69, 43)"),
+	36 unquote("rgb(119, 66, 39)"),
+	37 unquote("rgb(112, 62, 36)"),
+	38 unquote("rgb(105, 58, 31)"),
+	39 unquote("rgb(98, 54, 25)"),
+	40 unquote("rgb(91, 51, 19)"),
+	41 unquote("rgb(84, 47, 13)"),
+	42 unquote("rgb(77, 43, 8)"),
+	43 unquote("rgb(69, 39, 11)"),
+	44 unquote("rgb(62, 36, 13)"),
+	45 unquote("rgb(54, 31, 16)"),
+	46 unquote("rgb(47, 27, 19)"),
+	47 unquote("rgb(39, 24, 21)"),
+	48 unquote("rgb(36, 21, 20)"),
+	49 unquote("rgb(33, 20, 19)"),
+	50 unquote("rgb(31, 18, 17)"),
+	51 unquote("rgb(28, 16, 15)"),
+	52 unquote("rgb(28, 15, 14)"),
+	53 unquote("rgb(23, 13, 12)"),
+	54 unquote("rgb(21, 11, 10)"),
+	55 unquote("rgb(18, 10, 9)"),
+	56 unquote("rgb(16, 8, 7)"),
+	57 unquote("rgb(13, 6, 5)"),
+	58 unquote("rgb(11, 5, 4)"),
+	59 unquote("rgb(9, 3, 2)"),
+	60 unquote("rgb(6, 2, 1)")
+);
+//CREATE ALL CSS VALUES
+@each $value in $ebc-color-list {
+	.ebc-#{nth($value, 1)} {
+		background-color:nth($value, 2);
+	}
+}
