@@ -1,7 +1,7 @@
-$version: "0.11";
-/*!
- *	EBC to RGB CSS Stylesheet
- *	The 7th Floor Brewing Co. - 2014
+$version: "0.12";
+/*
+ *	EBC2RGB CSS
+ *	The Seventh Floor Brewing Co. - 2014
  *	CSS Version #{$version}
  *	CSS Compiled: #{timestamp()}
  */
@@ -68,7 +68,7 @@ $ebc-color-list: (
 	58 unquote("rgb(11, 5, 4)"),
 	59 unquote("rgb(9, 3, 2)"),
 	60 unquote("rgb(6, 2, 1)")
-);
+	);
 //CREATE ALL CSS VALUES
 @each $value in $ebc-color-list {
 	.ebc-#{nth($value, 1)} {

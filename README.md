@@ -1,12 +1,12 @@
 EBC2RGB
 =======
 
-EBC to RGB CSS Stylesheet
+EBC2RGB CSS v0.12
 
-Version 0.11
+The Seventh Floor Brewing Co. - 2014
 
-The 7th Floor Brewing Co. - 2014
+What is EBC?
 
-What is EBC ?
+http://en.wikipedia.org/wiki/Beer_measurement#Colour
 
 http://en.wikipedia.org/wiki/Standard_Reference_Method#EBC
