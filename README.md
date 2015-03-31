@@ -1,5 +1,4 @@
-EBC2RGB
-=======
+#EBC2RGB
 
 EBC2RGB CSS v0.12
 
