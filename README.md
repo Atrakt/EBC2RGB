@@ -10,22 +10,20 @@
 
 ## Table of Contents
 
-- [beer-color-css](#beer-color-css)
-  - [Table of Contents](#table-of-contents)
-  - [What is it](#what-is-it)
-  - [Getting Started](#getting-started)
-    - [Install](#install)
-    - [Usage](#usage)
-      - [As a library](#as-a-library)
-      - [As a CLI](#as-a-cli)
-      - [As a Tailwind CSS plugin](#as-a-tailwind-css-plugin)
-  - [Project Structure](#project-structure)
-  - [Configuration](#configuration)
-    - [Environment variables](#environment-variables)
-    - [API reference](#api-reference)
-  - [How it works](#how-it-works)
-  - [References](#references)
-  - [License](#license)
+- [What is it](#what-is-it)
+- [Getting Started](#getting-started)
+  - [Install](#install)
+  - [Usage](#usage)
+    - [As a library](#as-a-library)
+    - [As a CLI](#as-a-cli)
+    - [As a Tailwind CSS plugin](#as-a-tailwind-css-plugin)
+- [Project Structure](#project-structure)
+- [Configuration](#configuration)
+  - [Environment variables](#environment-variables)
+  - [API reference](#api-reference)
+- [How it works](#how-it-works)
+- [References](#references)
+- [License](#license)
 
 ## What is it
 
@@ -119,11 +117,19 @@ beerColorPlugin({
 ## Project Structure
 
 ```
-src/
-├── convert.ts      # Core conversion logic (A.J. de Lange spectral model)
-├── index.ts        # Public API exports
-├── cli.ts          # Command-line interface
-└── plugin.ts       # Tailwind CSS plugin
+beer-color-css/
+├── src/
+│   ├── convert.ts          # Core conversion logic (A.J. de Lange spectral model)
+│   ├── index.ts            # Public API exports
+│   ├── cli.ts              # Command-line interface
+│   └── plugin.ts           # Tailwind CSS plugin
+├── tests/
+│   ├── convert.test.ts
+│   ├── index.test.ts
+│   └── plugin.test.ts
+├── package.json
+├── tsconfig.json
+└── CHANGELOG.md
 ```
 
 ## Configuration
