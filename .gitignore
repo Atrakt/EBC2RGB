@@ -1,0 +1,20 @@
+node_modules/
+dist/
+*.log
+coverage/
+*.tgz
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Secrets
+.env
+.env.local
+.env.*.local
+
+
