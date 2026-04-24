@@ -2,12 +2,12 @@
 
 > Convert EBC (European Brewery Convention) or SRM (Standard Reference Method) beer color values to RGB hex codes with scientific accuracy.
 
-![Version](https://img.shields.io/github/package-json/v/Atrakt/beer-color-css?style=flat-square&color=blue)
-![Status](https://img.shields.io/badge/status-stable-brightgreen?style=flat-square)
-![npm](https://img.shields.io/npm/v/beer-color-css?style=flat-square&color=CB3837&logo=npm&logoColor=white)
-![License](https://img.shields.io/badge/license-MIT-green?style=flat-square)
-![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?style=flat-square&logo=typescript&logoColor=white)
-![Node.js](https://img.shields.io/badge/Node.js-18+-339933?style=flat-square&logo=node.js&logoColor=white)
+[![Version](https://img.shields.io/github/package-json/v/Atrakt/beer-color-css?style=flat-square&color=blue)](https://github.com/Atrakt/beer-color-css)
+[![Status](https://img.shields.io/badge/status-stable-brightgreen?style=flat-square)](https://github.com/Atrakt/beer-color-css)
+[![npm](https://img.shields.io/npm/v/beer-color-css?style=flat-square&color=CB3837&logo=npm&logoColor=white)](https://www.npmjs.com/package/beer-color-css)
+[![License](https://img.shields.io/badge/license-MIT-green?style=flat-square)](LICENSE)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?style=flat-square&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Node.js](https://img.shields.io/badge/Node.js-18+-339933?style=flat-square&logo=node.js&logoColor=white)](https://nodejs.org/)
 
 ## Table of Contents
 
@@ -37,7 +37,7 @@ Available as an **npm package**, a **CLI tool**, and a **Tailwind CSS plugin**.
 ## Getting Started
 
 **Prerequisites:**<br>
-![npm](https://img.shields.io/badge/npm-9+-CB3837?style=flat-square&logo=npm&logoColor=white)
+[![npm](https://img.shields.io/badge/npm-9+-CB3837?style=flat-square&logo=npm&logoColor=white)](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
 
 ### Install
 
