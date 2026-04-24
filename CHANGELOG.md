@@ -6,6 +6,13 @@ Versioning follows [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
+## [0.3.1] - 2026-04-24
+### Changed
+- README: fixed Table of Contents (removed self-referencing entries).
+- README: updated project structure tree (added `tests/`, aligned with `.gitignore`).
+- README: added live demo link (https://atrakt.github.io/beer-color-css-demo).
+- README: added npm version badge.
+
 ## [0.3.0] - 2026-04-24
 ### Added
 - SRM support: `srmToHex()`, `srmToRgb()`, `srmToRgbObject()`, `srmToRgbArray()` — converts SRM values using the same A.J. de Lange spectral model.
@@ -41,7 +48,8 @@ Versioning follows [Semantic Versioning](https://semver.org/).
 - Build pipeline: tsup (ESM + CJS + TypeScript declarations), vitest, tsx.
 - `.gitignore` with `node_modules/`, `dist/`, `*.log`, `coverage/`.
 
-[Unreleased]: https://github.com/Atrakt/beer-color-css/compare/v0.3.0...HEAD
+[Unreleased]: https://github.com/Atrakt/beer-color-css/compare/v0.3.1...HEAD
+[0.3.1]: https://github.com/Atrakt/beer-color-css/compare/v0.3.0...v0.3.1
 [0.3.0]: https://github.com/Atrakt/beer-color-css/compare/v0.2.0...v0.3.0
 [0.2.0]: https://github.com/Atrakt/beer-color-css/compare/v0.1.0...v0.2.0
 [0.1.0]: https://github.com/Atrakt/beer-color-css/releases/tag/v0.1.0

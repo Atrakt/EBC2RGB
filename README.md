@@ -4,6 +4,7 @@
 
 ![Version](https://img.shields.io/github/package-json/v/Atrakt/beer-color-css?style=flat-square&color=blue)
 ![Status](https://img.shields.io/badge/status-stable-brightgreen?style=flat-square)
+![npm](https://img.shields.io/npm/v/beer-color-css?style=flat-square&color=CB3837&logo=npm&logoColor=white)
 ![License](https://img.shields.io/badge/license-MIT-green?style=flat-square)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?style=flat-square&logo=typescript&logoColor=white)
 ![Node.js](https://img.shields.io/badge/Node.js-18+-339933?style=flat-square&logo=node.js&logoColor=white)
@@ -29,6 +30,8 @@
 
 `beer-color-css` takes an EBC or SRM value and converts it to a precise RGB color. It uses the **A.J. de Lange spectral model** — a scientifically validated method based on light transmission analysis of 99 real beers — producing colorimetrically accurate results suitable for brewing apps, color pickers, and design systems.
 
+**[→ Live demo](https://atrakt.github.io/beer-color-css-demo)**
+
 Available as an **npm package**, a **CLI tool**, and a **Tailwind CSS plugin**.
 
 ## Getting Started
@@ -50,15 +53,15 @@ npm install beer-color-css
 import { ebcToHex, ebcToRgb, ebcToRgbObject, srmToHex } from "beer-color-css";
 
 // EBC
-ebcToHex(20)                        // → "#b95900"
-ebcToRgb(20)                        // → "rgb(185, 89, 0)"
-ebcToRgbObject(20)                  // → { r: 185, g: 89, b: 0 }
+ebcToHex(20); // → "#b95900"
+ebcToRgb(20); // → "rgb(185, 89, 0)"
+ebcToRgbObject(20); // → { r: 185, g: 89, b: 0 }
 
 // SRM
-srmToHex(10)                        // → "#ba5b00"
+srmToHex(10); // → "#ba5b00"
 
 // Custom optical path (cm)
-ebcToHex(20, { lightPath: 3 })      // → "#d88900"
+ebcToHex(20, { lightPath: 3 }); // → "#d88900"
 ```
 
 #### As a CLI
@@ -108,10 +111,10 @@ Plugin options:
 
 ```typescript
 beerColorPlugin({
-  ebcRange: [1, 80],   // or false to disable
-  srmRange: [1, 40],   // or false to disable
-  lightPath: 5,        // optical path in cm (default: 5)
-})
+  ebcRange: [1, 80], // or false to disable
+  srmRange: [1, 40], // or false to disable
+  lightPath: 5, // optical path in cm (default: 5)
+});
 ```
 
 ## Project Structure
@@ -169,15 +172,15 @@ srmToRgbArray(srm: number, options?: ColorOptions): [number, number, number]
 
 ```typescript
 type ColorOptions = {
-  lightPath?: number  // Optical path in cm (default: 5.0)
-}
+  lightPath?: number; // Optical path in cm (default: 5.0)
+};
 ```
 
-| `lightPath` | Use case |
-|---|---|
+| `lightPath`     | Use case                                         |
+| --------------- | ------------------------------------------------ |
 | `5.0` (default) | BJCP standard — typical glass viewed in daylight |
-| `3.0` | Historical Python CSS reference output |
-| `1.27` | ASBC/EBC laboratory measurement standard |
+| `3.0`           | Historical Python CSS reference output           |
+| `1.27`          | ASBC/EBC laboratory measurement standard         |
 
 ## How it works
 
