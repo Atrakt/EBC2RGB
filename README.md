@@ -5,7 +5,7 @@
 [![Version](https://img.shields.io/github/package-json/v/Atrakt/beer-color-rgb?style=flat-square&color=blue)](https://github.com/Atrakt/beer-color-rgb)
 [![Status](https://img.shields.io/badge/status-stable-brightgreen?style=flat-square)](https://github.com/Atrakt/beer-color-rgb)
 [![npm](https://img.shields.io/npm/v/beer-color-rgb?style=flat-square&color=CB3837&logo=npm&logoColor=white)](https://www.npmjs.com/package/beer-color-rgb)
-[![Socket Badge](https://badge.socket.dev/npm/package/beer-color-rgb)](https://socket.dev/npm/package/beer-color-rgb)
+[![Socket Badge](https://badge.socket.dev/npm/package/beer-color-rgb)](https://badge.socket.dev/npm/package/beer-color-rgb)
 [![License](https://img.shields.io/badge/license-MIT-green?style=flat-square)](LICENSE)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?style=flat-square&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![Node.js](https://img.shields.io/badge/Node.js-18+-339933?style=flat-square&logo=node.js&logoColor=white)](https://nodejs.org/)
