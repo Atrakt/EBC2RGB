@@ -1,10 +1,11 @@
-# beer-color-css
+# beer-color-rgb
 
 > Convert EBC (European Brewery Convention) or SRM (Standard Reference Method) beer color values to RGB hex codes with scientific accuracy.
 
-[![Version](https://img.shields.io/github/package-json/v/Atrakt/beer-color-css?style=flat-square&color=blue)](https://github.com/Atrakt/beer-color-css)
-[![Status](https://img.shields.io/badge/status-stable-brightgreen?style=flat-square)](https://github.com/Atrakt/beer-color-css)
-[![npm](https://img.shields.io/npm/v/beer-color-css?style=flat-square&color=CB3837&logo=npm&logoColor=white)](https://www.npmjs.com/package/beer-color-css)
+[![Version](https://img.shields.io/github/package-json/v/Atrakt/beer-color-rgb?style=flat-square&color=blue)](https://github.com/Atrakt/beer-color-rgb)
+[![Status](https://img.shields.io/badge/status-stable-brightgreen?style=flat-square)](https://github.com/Atrakt/beer-color-rgb)
+[![npm](https://img.shields.io/npm/v/beer-color-rgb?style=flat-square&color=CB3837&logo=npm&logoColor=white)](https://www.npmjs.com/package/beer-color-rgb)
+[![Socket Badge](https://badge.socket.dev/npm/package/beer-color-rgb)](https://socket.dev/npm/package/beer-color-rgb)
 [![License](https://img.shields.io/badge/license-MIT-green?style=flat-square)](LICENSE)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?style=flat-square&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![Node.js](https://img.shields.io/badge/Node.js-18+-339933?style=flat-square&logo=node.js&logoColor=white)](https://nodejs.org/)
@@ -28,9 +29,9 @@
 
 ## What is it
 
-`beer-color-css` takes an EBC or SRM value and converts it to a precise RGB color. It uses the **A.J. de Lange spectral model** — a scientifically validated method based on light transmission analysis of 99 real beers — producing colorimetrically accurate results suitable for brewing apps, color pickers, and design systems.
+`beer-color-rgb` takes an EBC or SRM value and converts it to a precise RGB color. It uses the **A.J. de Lange spectral model** — a scientifically validated method based on light transmission analysis of 99 real beers — producing colorimetrically accurate results suitable for brewing apps, color pickers, and design systems.
 
-**[→ Live demo](https://atrakt.github.io/beer-color-css-demo)**
+**[→ Live demo](https://atrakt.github.io/beer-color-rgb-demo)**
 
 Available as an **npm package**, a **CLI tool**, and a **Tailwind CSS plugin**.
 
@@ -42,7 +43,7 @@ Available as an **npm package**, a **CLI tool**, and a **Tailwind CSS plugin**.
 ### Install
 
 ```bash
-npm install beer-color-css
+npm install beer-color-rgb
 ```
 
 ### Usage
@@ -50,7 +51,7 @@ npm install beer-color-css
 #### As a library
 
 ```typescript
-import { ebcToHex, ebcToRgb, ebcToRgbObject, srmToHex } from "beer-color-css";
+import { ebcToHex, ebcToRgb, ebcToRgbObject, srmToHex } from "beer-color-rgb";
 
 // EBC
 ebcToHex(20); // → "#b95900"
@@ -68,21 +69,21 @@ ebcToHex(20, { lightPath: 3 }); // → "#d88900"
 
 ```bash
 # Single EBC conversion
-npx beer-color-css 20
+npx beer-color-rgb 20
 # → #b95900
 
 # Single SRM conversion
-npx beer-color-css --srm 10
+npx beer-color-rgb --srm 10
 # → #ba5b00
 
 # Batch CSS generation
-npx beer-color-css generate --format css --unit ebc --output colors.css
+npx beer-color-rgb generate --format css --unit ebc --output colors.css
 
 # Batch JSON generation
-npx beer-color-css generate --format json --unit srm --output colors.json
+npx beer-color-rgb generate --format json --unit srm --output colors.json
 
 # Custom optical path
-npx beer-color-css 20 --path 3
+npx beer-color-rgb 20 --path 3
 # → #d88900
 ```
 
@@ -90,7 +91,7 @@ npx beer-color-css 20 --path 3
 
 ```typescript
 // tailwind.config.ts
-import { beerColorPlugin } from "beer-color-css/plugin";
+import { beerColorPlugin } from "beer-color-rgb/plugin";
 
 export default {
   plugins: [beerColorPlugin()],
@@ -103,7 +104,7 @@ This generates utility classes for EBC 1–80 and SRM 1–40:
 <div class="ebc-bg-20">...</div>
 <div class="srm-bg-10">...</div>
 
-<!-- Arbitrary values -->
+<!-- Decimal values supported, though uncommon in practice -->
 <div class="ebc-bg-[35.5]">...</div>
 ```
 
@@ -120,7 +121,7 @@ beerColorPlugin({
 ## Project Structure
 
 ```
-beer-color-css/
+beer-color-rgb/
 ├── src/
 │   ├── convert.ts          # Core conversion logic (A.J. de Lange spectral model)
 │   ├── index.ts            # Public API exports
@@ -179,7 +180,7 @@ type ColorOptions = {
 | `lightPath`     | Use case                                         |
 | --------------- | ------------------------------------------------ |
 | `5.0` (default) | BJCP standard — typical glass viewed in daylight |
-| `3.0`           | Historical Python CSS reference output           |
+| `3.0`           | Aesthetic middle ground — richer apparent color  |
 | `1.27`          | ASBC/EBC laboratory measurement standard         |
 
 ## How it works

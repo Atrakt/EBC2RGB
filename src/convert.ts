@@ -1,3 +1,10 @@
+// Based on olfarve by Thomas Ascher <thomas.ascher@gmx.at>
+// Copyright 2022 Thomas Ascher — MIT License
+// https://github.com/aschet/olfarve
+//
+// Algorithm: A.J. de Lange, "Color," in Brewing Materials and Processes, Elsevier, 2016.
+// CIE data: CIE 1931 2° observer + D65 illuminant — https://cie.co.at
+
 // CIE 1931 2° standard observer + D65 illuminant data
 // 81 entries, λ = 380–780 nm, 5 nm steps
 // Format: [x_bar, y_bar, z_bar, D65]
@@ -97,8 +104,6 @@ function _gamma(t: number): number {
 
 /**
  * Converts an EBC value to [R, G, B] using the A.J. de Lange spectral model.
- * Direct port of gen_css_delange.py::ebc_to_rgb_delange().
- *
  * @param ebc - EBC value (1–80+, float accepted)
  * @param pathCm - Optical path length in cm. No default here — caller must supply a value.
  *   The public API default (5.0 cm) is defined in index.ts as the single source of truth.
