@@ -90,6 +90,24 @@ npx beer-color-rgb 20 --path 3
 
 #### As a Tailwind CSS plugin
 
+**Tailwind CSS v4 (Recommended):**
+
+```css
+@import "tailwindcss";
+@plugin "beer-color-rgb/plugin";
+
+/* Optional: configure via @theme */
+@theme {
+  --beer-light-path: 3;    /* optical path in cm, default 5 */
+  --beer-ebc-start: 1;     /* EBC range start, default 1 */
+  --beer-ebc-end: 20;      /* EBC range end, default 80 */
+  --beer-srm-start: 1;     /* SRM range start, default 1 */
+  --beer-srm-end: 15;      /* SRM range end, default 40 */
+}
+```
+
+**Tailwind CSS v3 (Legacy):**
+
 ```typescript
 // tailwind.config.ts
 import { beerColorPlugin } from "beer-color-rgb/plugin";
@@ -109,7 +127,7 @@ This generates utility classes for EBC 1–80 and SRM 1–40:
 <div class="ebc-bg-[35.5]">...</div>
 ```
 
-Plugin options:
+Plugin options (v3 JS config — all options available):
 
 ```typescript
 beerColorPlugin({
@@ -118,6 +136,8 @@ beerColorPlugin({
   lightPath: 5, // optical path in cm (default: 5)
 });
 ```
+
+> **Note:** Disabling a range entirely (`false`) is v3/JS-only. In v4, use `@theme` variables to restrict the range.
 
 ## Project Structure
 

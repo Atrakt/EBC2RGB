@@ -49,3 +49,45 @@ describe('beerColorPlugin', () => {
     expect(capturedMatchers['srm']('')).toEqual({})
   })
 })
+
+describe('beerColorPlugin (v4 theme helper)', () => {
+  const makeHelpers = (themeValues: Record<string, string>, out: Record<string, any>) => ({
+    addUtilities: (u: any) => Object.assign(out, u),
+    matchUtilities: () => {},
+    theme: (key: string) => themeValues[key],
+  })
+
+  it('reads lightPath from theme() when not set in JS options', () => {
+    const plugin = beerColorPlugin({ ebcRange: [20, 20], srmRange: false })
+    const utilities: Record<string, any> = {}
+    plugin(makeHelpers({ '--beer-light-path': '3' }, utilities) as any)
+    expect(utilities['.ebc-bg-20'].backgroundColor).toBe('#d88900')
+  })
+
+  it('JS option takes priority over theme() value', () => {
+    const plugin = beerColorPlugin({ ebcRange: [20, 20], srmRange: false, lightPath: 3 })
+    const utilities: Record<string, any> = {}
+    plugin(makeHelpers({ '--beer-light-path': '99' }, utilities) as any)
+    expect(utilities['.ebc-bg-20'].backgroundColor).toBe('#d88900')
+  })
+
+  it('reads ebcRange from theme() — generates only the specified range', () => {
+    const plugin = beerColorPlugin({ srmRange: false })
+    const utilities: Record<string, any> = {}
+    plugin(makeHelpers({ '--beer-ebc-start': '5', '--beer-ebc-end': '7' }, utilities) as any)
+    expect(utilities['.ebc-5']).toBeDefined()
+    expect(utilities['.ebc-7']).toBeDefined()
+    expect(utilities['.ebc-4']).toBeUndefined()
+    expect(utilities['.ebc-8']).toBeUndefined()
+  })
+
+  it('uses hardcoded defaults when theme() returns undefined', () => {
+    const plugin = beerColorPlugin()
+    const utilities: Record<string, any> = {}
+    plugin(makeHelpers({}, utilities) as any)
+    expect(utilities['.ebc-1']).toBeDefined()
+    expect(utilities['.ebc-80']).toBeDefined()
+    expect(utilities['.srm-1']).toBeDefined()
+    expect(utilities['.srm-40']).toBeDefined()
+  })
+})

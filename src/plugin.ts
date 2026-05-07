@@ -10,17 +10,26 @@ interface PluginOptions {
 interface TailwindHelpers {
   addUtilities: (utilities: Record<string, Record<string, string>>) => void
   matchUtilities: (utilities: Record<string, (value: string) => Record<string, string>>) => void
+  theme?: (path: string) => string | undefined
 }
 
 export function beerColorPlugin(options: PluginOptions = {}) {
-  const {
-    ebcRange = [1, 80],
-    srmRange = [1, 40],
-    lightPath = 5,
-  } = options
-  const colorOpts: ColorOptions = { lightPath }
+  return function({ addUtilities, matchUtilities, theme }: TailwindHelpers): void {
+    const lightPath = options.lightPath ?? Number(theme?.('--beer-light-path') ?? 5)
 
-  return function({ addUtilities, matchUtilities }: TailwindHelpers): void {
+    const ebcRange: [number, number] | false =
+      options.ebcRange === false ? false : [
+        options.ebcRange?.[0] ?? Number(theme?.('--beer-ebc-start') ?? 1),
+        options.ebcRange?.[1] ?? Number(theme?.('--beer-ebc-end')   ?? 80),
+      ]
+
+    const srmRange: [number, number] | false =
+      options.srmRange === false ? false : [
+        options.srmRange?.[0] ?? Number(theme?.('--beer-srm-start') ?? 1),
+        options.srmRange?.[1] ?? Number(theme?.('--beer-srm-end')   ?? 40),
+      ]
+
+    const colorOpts: ColorOptions = { lightPath }
     const utilities: Record<string, Record<string, string>> = {}
 
     if (ebcRange) {
@@ -50,3 +59,5 @@ export function beerColorPlugin(options: PluginOptions = {}) {
     })
   }
 }
+
+export default beerColorPlugin()

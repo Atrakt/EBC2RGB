@@ -6,6 +6,16 @@ Versioning follows [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
+## [0.3.3] - 2026-05-07
+
+### Fixed
+
+- Tailwind v4: plugin now correctly generates utilities when loaded via `@plugin` (previous `export default beerColorPlugin` was the factory — v4 ignored the returned function, producing zero classes).
+
+### Added
+
+- Tailwind v4: `lightPath`, `ebcRange`, and `srmRange` are now configurable via `@theme` CSS variables (`--beer-light-path`, `--beer-ebc-start`, `--beer-ebc-end`, `--beer-srm-start`, `--beer-srm-end`).
+
 ## [0.3.2] - 2026-04-26
 
 ### Added
